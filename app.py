@@ -6,9 +6,9 @@ import os
 import sys
 import traceback
 
-PORT = 8080
-MCP_EXE = r"C:\Users\Ulas\AppData\Roaming\Python\Python314\Scripts\notebooklm-mcp.exe"
-NOTEBOOK_ID = "0c7d9ec4-1bd2-4534-84bb-880e44022ee3"
+PORT = int(os.environ.get("PORT", 8080))
+MCP_EXE = os.environ.get("MCP_EXE", "notebooklm-mcp")
+NOTEBOOK_ID = os.environ.get("NOTEBOOK_ID", "0c7d9ec4-1bd2-4534-84bb-880e44022ee3")
 
 class NotebookLMSession:
     def __init__(self):
